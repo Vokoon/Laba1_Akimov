@@ -44,4 +44,21 @@ row_index=2
 worksheet.cell(row=row_index, column=6).value = 'ACE'
 data3.save('base.xlsx') #Откройте файл base.xlsx и убедитесь что строка под этим номером пропала и была автоматически заменена соседом рядом
 
+#Удаляем лишнее дабы сократить Содержания Таблицы
+df = pd.read_excel('base_demo.xlsx') # Загрузка Excel-файла в DataFrame
+value_to_delete = 'AC'
+df = df[df['Марка'] != value_to_delete]
+df.to_excel('base.xlsx', index=False)
 # data.to_excel('путь_к_файлу.xlsx', index=False) Можно сохранить изменения
+
+#Избавляемся от "мусорных" Столбцов, без значений
+wb = load_workbook('base.xlsx') # Загрузка файла Excel
+ws = wb.active  # Выбор активного листа
+columns_to_delete = []  # Список для хранения столбцов, которые нужно удалить
+for column in range(1, ws.max_column + 1): # Перебор столбцов по индексу (начиная с 1)
+    column_values = [cell.value for cell in ws[column] if cell.value] # Проверка, есть ли значения в столбце
+    if len(column_values) == 0:
+        columns_to_delete.append(column)
+for column in reversed(columns_to_delete):# Удаление столбцов, начиная с последнего, чтобы избежать сдвига индексов
+    ws.delete_cols(column)
+wb.save('base.xlsx')
