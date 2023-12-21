@@ -62,3 +62,13 @@ for column in range(1, ws.max_column + 1): # Перебор столбцов п�
 for column in reversed(columns_to_delete):# Удаление столбцов, начиная с последнего, чтобы избежать сдвига индексов
     ws.delete_cols(column)
 wb.save('base.xlsx')
+
+#Заполнямем пустые ячейки
+data4 = openpyxl.load_workbook('base.xlsx')
+sheet = data4.active
+for row in sheet.iter_rows():
+    for cell in row:
+        # Проверка, является ли ячейка пустой
+        if cell.value is None:
+            cell.value = 0
+data4.save('base1.xlsx')
