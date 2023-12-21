@@ -1,0 +1,37 @@
+import pandas as pd
+!wget  -O 'base_demo.xlsx' #название файла
+data = pd.read_excel('base_demo.xlsx') #название файла
+data
+
+data.shape
+
+# Сортировка по возрастанию
+print("Введите название таблицы для сортировки по Возрастанию")
+sorted_data_asc = data.sort_values(by=input(), ascending=True)
+print(sorted_data_asc)
+
+# Сортировка по убыванию
+print("Введите название таблицы для сортировки по Убыванию")
+sorted_data_desc = data.sort_values(by=input(), ascending=False)
+print(sorted_data_desc)
+
+# Вывод случайного элемента из таблицы
+random_element = data.sample()
+print(random_element)
+
+# Вывод Машин с предположительно истёкшим сроком службы
+corrmat=data.sort_values(by='Год', ascending=True)
+corrmat.head(6)
+
+specific_row = data.iloc["Номер строки"]
+print(specific_row)
+
+row = data.loc[data['Марка'] == 'AC'] #На месте Марки любой столбец из Таблицы. На месте AC любой элемент из таблицы
+row #Мы выводим Строки с опр.Элементом 
+
+column = data.loc[data['Страна марки'] == 'Россия', 'Страна марки']
+column #Мы выводим Столбцы с опр.Элементов
+
+data.at[0, 'Страна марки'] = "Россия"
+# data.to_excel('путь_к_файлу.xlsx', index=False) Можно сохранить изменения
+data
