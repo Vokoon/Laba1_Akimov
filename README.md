@@ -16,6 +16,7 @@ from openpyxl import load_workbook
 import openpyxl
 ```
 Потом нужно загрузить файл для работы с ним.
+
 Для загрузки файла, переносим его в это поле.
 
 ![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/11615305-0946-4884-a06e-f311d9691de2)
