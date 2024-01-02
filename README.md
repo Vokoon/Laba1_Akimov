@@ -36,11 +36,23 @@ data
 sorted_data_asc = data.sort_values(by="Год начала модели", ascending=True)
 sorted_data_asc
 ```
-Если исползовали мой файл с базой данных то увидите следующее:
+Если исползовали мой файл с базой данных то увидите следующее: Мы видим строки под номерами (572,571,179,,176,177) это машины у которых на 2023г точно вышел гарантийной срок.
 
 ![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/bf600f70-85b7-472c-848e-a9a41eed97d3)
 
+Эти данные можно удалить но для этого нужно использовать библиотеку openpyxl которую мы импортировали в самом начале
+
 ```Ruby
+#Открываем файл Excel
+workbook = load_workbook('base_demo.xlsx')
+
+# Выбираем лист, на котором находится строка для удаления
+sheet = workbook['cars-base.ru'] #Указываем строку, в данном случае "cars-base.ru"
+row_number = 2
+sheet.delete_rows(row_number)
+
+# Сохраняем изменения
+workbook.save('base_new.xlsx')
 ```
 ```Ruby
 ```
