@@ -43,14 +43,19 @@ sorted_data_asc
 Эти данные можно удалить но для этого нужно использовать библиотеку openpyxl которую мы импортировали в самом начале
 
 ```Ruby
+# Открываем файл Excel
 workbook = load_workbook('base_demo.xlsx')
 
-# Выбираем лист, на котором находится строка для удаления
-sheet = workbook['cars-base.ru'] #Указываем строку, в данном случае "cars-base.ru"
-row_number = 2
-sheet.delete_rows(row_number)
+# Выбираем лист, на котором находятся строки для удаления
+sheet = workbook['cars-base.ru']  # Указываете имя листа
+rows_to_delete = [572,571,179,176,177]  # Список номеров строк, которые нужно удалить
 
-workbook.save('base_new.xlsx') #Сохраняем файл отдельно от оригинала.
+# Удаляем строки
+for row_number in sorted(rows_to_delete, reverse=True):
+    sheet.delete_rows(row_number)
+
+# Сохраняем изменения
+workbook.save('base_new.xlsx')
 ```
 ```Ruby
 ```
