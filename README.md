@@ -32,6 +32,8 @@ data
 ![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/ec0449e8-29d7-4cdd-8f78-ca48a27fad77)
 
 ```Ruby
+sorted_data_asc = data.sort_values(by="Год начала модели", ascending=True)
+sorted_data_asc
 ```
 ```Ruby
 ```
