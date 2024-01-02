@@ -8,6 +8,7 @@
 
 Для работы нужен файл с базой данных техники или для проверки можете использовать этот файл (https://docs.google.com/spreadsheets/d/1AOY39RaiVnOsi12ICJ1PUpsUWVBQ49tg/edit?usp=sharing&ouid=100520035339836256316&rtpof=true&sd=true)
 ## Шаги по созданию и использования.
+#1.Часть
 Для начала откройте компилятор для работы к примеру (https://colab.google), можете выбрать и другую но инструкция для КОЛАБА.
 Сначала вам необходимо  скачайть и импортировать следующие библиотеки:
 ```Ruby
@@ -90,5 +91,19 @@ df.to_excel('base_new.xlsx', index=False)
 
 С помощью выражения df[df[Столбец] != value_to_delete] создается новый DataFrame, содержащий только те строки из исходного DataFrame df, где значение в столбце Столбец не совпадает со значением value_to_delete.
 
-Новый DataFrame сохраняется в файл Excel с именем "base_new.xlsx" с помощью метода to_excel('base_new.xlsx', index=False). Параметр index=False указывает, что индексы строк не должны быть сохранены в файле.```Ruby
+Новый DataFrame сохраняется в файл Excel с именем "base_new.xlsx" с помощью метода to_excel('base_new.xlsx', index=False). Параметр index=False указывает, что индексы строк не должны быть сохранены в файле.
+
+Если в вашей таблице есть пустые строки и столбцы, то можем это быстро подчистить исползуя следующий метод. Под кодом будут пояснения к нему.
+```Ruby
+wb = load_workbook('base_demo.xlsx') # Загрузка файла Excel
+ws = wb.active  # Выбор активного листа
+columns_to_delete = []  # Список для хранения столбцов, которые нужно удалить
+for column in range(1, ws.max_column + 1): # Перебор столбцов по индексу (начиная с 1)
+    column_values = [cell.value for cell in ws[column] if cell.value] # Проверка, есть ли значения в столбце
+    if len(column_values) == 0:
+        columns_to_delete.append(column)
+for column in reversed(columns_to_delete):# Удаление столбцов, начиная с последнего, чтобы избежать сдвига индексов
+    ws.delete_cols(column)
+
+wb.save('base_new.xlsx')
 ```
