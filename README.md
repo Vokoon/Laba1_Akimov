@@ -9,9 +9,11 @@
 ## Шаги по созданию и использования.
 Для начала откройте компилятор для работы к примеру (https://colab.google), можете выбрать и другую но инструкция для КОЛАБА.
 Сначла скачайте и импортируйте следующие библиотеки:
-'''Ruby
+```
+
+Ruby
 import pandas as pd
 from openpyxl import load_workbook
 !pip install openpyxl
 import openpyxl
-'''
+```
