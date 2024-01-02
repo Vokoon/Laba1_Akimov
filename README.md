@@ -16,6 +16,7 @@ from openpyxl import load_workbook
 import openpyxl
 ```
 Для загрузки файла, переносим его в это поле.
+
 ![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/11615305-0946-4884-a06e-f311d9691de2)
 ```Ruby
 !wget  -O 'название файла xlsx' 
