@@ -31,10 +31,15 @@ data
 
 ![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/ec0449e8-29d7-4cdd-8f78-ca48a27fad77)
 
+Можем провести проверку есть ли техника вышедшая из эксплуатации или вышел гарантийной срок
 ```Ruby
 sorted_data_asc = data.sort_values(by="Год начала модели", ascending=True)
 sorted_data_asc
 ```
+Если исползовали мой файл с базой данных то увидите следующее:
+
+![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/bf600f70-85b7-472c-848e-a9a41eed97d3)
+
 ```Ruby
 ```
 ```Ruby
