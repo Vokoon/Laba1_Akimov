@@ -28,6 +28,9 @@ data = pd.read_excel('название файла xlsx')
 data
 ```
 Если вы использовали файл с базой данных предоставленной мной то видите примерно это: 
+
+![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/ec0449e8-29d7-4cdd-8f78-ca48a27fad77)
+
 ```Ruby
 ```
 ```Ruby
