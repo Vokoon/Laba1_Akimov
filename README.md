@@ -58,7 +58,13 @@ for row_number in sorted(rows_to_delete, reverse=True):
 # Сохраняем изменения
 workbook.save('base_new.xlsx')
 ```
+Можем добавить новую строк в имеющуюся таблицу
 ```Ruby
+data2 = load_workbook('base_demo.xlsx') # Исходная таблица
+sheet = data2.active # Выбираем активный лист
+new_row=('AA', 'AA', 'AA', 'Да') #Даём информацию для новой строки, значения могут быть любые, но знайте (,) разделяет значения по столбцам
+sheet.append(new_row)
+data2.save('base.xlsx') #Откройте файл base.xlsx и убедитесь что строка под этим номером пропала и была автоматически заменена соседом рядом
 ```
 ```Ruby
 ```
