@@ -90,5 +90,5 @@ df.to_excel('base_new.xlsx', index=False)
 
 С помощью выражения df[df[Столбец] != value_to_delete] создается новый DataFrame, содержащий только те строки из исходного DataFrame df, где значение в столбце Столбец не совпадает со значением value_to_delete.
 
-Новый DataFrame сохраняется в файл Excel с именем "base.xlsx" с помощью метода to_excel('base.xlsx', index=False). Параметр index=False указывает, что индексы строк не должны быть сохранены в файле.```Ruby
+Новый DataFrame сохраняется в файл Excel с именем "base_new.xlsx" с помощью метода to_excel('base_new.xlsx', index=False). Параметр index=False указывает, что индексы строк не должны быть сохранены в файле.```Ruby
 ```
