@@ -6,7 +6,7 @@
 Таблица Ексель с Базой данных (https://docs.google.com/spreadsheets/d/1AOY39RaiVnOsi12ICJ1PUpsUWVBQ49tg/edit?usp=sharing&ouid=100520035339836256316&rtpof=true&sd=true)
 Желательно  скачать, чтобы вы могли проверить работу кода, или можете использовать свои данные.
 
-Для работы нужно имеющийся файл с базой данных техники или для проверки можете использовать этот файл (https://docs.google.com/spreadsheets/d/1AOY39RaiVnOsi12ICJ1PUpsUWVBQ49tg/edit?usp=sharing&ouid=100520035339836256316&rtpof=true&sd=true)
+Для работы нужен файл с базой данных техники или для проверки можете использовать этот файл (https://docs.google.com/spreadsheets/d/1AOY39RaiVnOsi12ICJ1PUpsUWVBQ49tg/edit?usp=sharing&ouid=100520035339836256316&rtpof=true&sd=true)
 ## Шаги по созданию и использования.
 Для начала откройте компилятор для работы к примеру (https://colab.google), можете выбрать и другую но инструкция для КОЛАБА.
 Сначла скачайте и импортируйте следующие библиотеки:
