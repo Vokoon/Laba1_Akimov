@@ -15,7 +15,11 @@ from openpyxl import load_workbook
 !pip install openpyxl
 import openpyxl
 ```
+Для загрузки файла, переносим его в это поле.
+![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/87bb686d-7427-4f31-96a5-05972716f9b8)
 ```Ruby
+!wget  -O 'название файла xlsx' 
+data = pd.read_excel('название файла xlsx')
 ```
 ```Ruby
 ```
