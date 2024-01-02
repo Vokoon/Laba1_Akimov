@@ -51,8 +51,7 @@ sheet = workbook['cars-base.ru'] #Указываем строку, в данно
 row_number = 2
 sheet.delete_rows(row_number)
 
-# Сохраняем изменения
-workbook.save('base_new.xlsx')
+workbook.save('base_new.xlsx') #Сохраняем файл отдельно от оригинала.
 ```
 ```Ruby
 ```
