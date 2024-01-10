@@ -1,16 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # Создание подписей к изображениям (без Attention)
-# 
-# В этой работе я собираюсь объединить классификацию изображений и генерацию подписи к ним. Набор данных Microsoft Common Object in Context [MSCOCO](https://cocodataset.org/#home) состоит из множества изображений и пяти подписей к каждому изображению.
-# Будем объединять предобученную сеть классификатора ResNet с NLP моделью 
-# 
-# <div style="text-align:center;">
-#   <img src="https://drive.google.com/uc?id=1XUfYNlfE0j-sCWgir84GyjMzDsSzUbUR" alt="bot" width=700" height="443">
-# 
-# 
-# Рисунок 1 - Архитектура сети
 
 # In[10]:
 
@@ -38,10 +25,6 @@ warnings.filterwarnings("ignore", category=UserWarning)
 
 get_ipython().run_line_magic('matplotlib', 'inline')
 get_ipython().system('nvidia-smi')
-
-
-# Так как датасет слишком большой, поэтому закачаю лишь валидационную часть (~6 Gb)
-
 # In[11]:
 
 
