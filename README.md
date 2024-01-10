@@ -148,3 +148,99 @@ warnings.filterwarnings("ignore", category=UserWarning)
 #!wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
 #!unzip annotations_trainval2014.zip
 ```
+-----
+
+Мы будем передавать изображения из MSCOCO через ResNet.
+
+```Ruby
+model = tv.models.resnet34(pretrained=True)
+model.eval()
+```
+```Ruby
+num_features = model.fc.in_features
+print('Число фичей из одной фотки:', num_features)
+model.fc = torch.nn.Identity()  # заменяем полносвязный слой на слой-тождественность
+```
+Проверка выхода сети при подаче батча = 1 и фотки 3,224,224:
+```Ruby
+test_tensor = torch.rand(1, 3, 224, 224)
+out = model(test_tensor)
+print(out.shape)
+```
+```Ruby
+# Заморозка модели
+for param in model.parameters():
+    param.requires_grad = False
+```
+```Ruby
+TRAIN_IMAGE_PATH = 'val2014'
+ANNOTATION_PATH = 'annotations/captions_val2014.json'
+
+# Создадим трансформации к изображениям:
+transform = T.Compose([T.Resize(256), 
+                       T.CenterCrop(224), 
+                       T.ToTensor(), 
+                       T.Normalize(mean=[0.485, 0.456, 0.406],
+                                 std=[0.229, 0.224, 0.225])])
+
+# Создадим датасет:
+dataset = tv.datasets.CocoCaptions(TRAIN_IMAGE_PATH, ANNOTATION_PATH, transform)
+```
+```Ruby
+print('Количество изображений в выборке: ', len(dataset))
+```
+Кодируем наши подписи и устанавливаем лимит словаря
+При использовании горячего кодирования длина вектора каждого слова равна количеству слов в словаре.
+
+Можем посмотреть что хранится в датасете:
+```Ruby
+dataset[1]
+```
+Это кортеж, в которм фотка и список с возможными описаниями этого изображения. Разделим по пробелам все слова в датасете и получим массив в котором каждое слово отдельный элемент. 
+```Ruby
+def process_word_list(word_list):
+    processed_list = []
+    for word in word_list:
+        # Приводим слово к нижнему регистру
+        word = word.lower()
+        # Удаляем все символы, кроме букв
+        word = re.sub(r'[^a-zA-Z]', '', word)
+        # Добавляем обработанное слово в список
+        processed_list.append(word)
+    return processed_list
+```
+```Ruby
+##Составим список всех предложений.
+DatasetWordList=[]
+for _, dataset_caption in dataset:
+        DatasetWordList += process_word_list(str(dataset_caption).split())
+```
+```Ruby
+print('столько слов обнаружил в созданном списке:', len(DatasetWordList))
+
+```
+Получили словарь со словами и количеством их встреч в датасете:
+```Ruby
+#Определить количество различных слов
+distinctwords = collections.Counter(DatasetWordList)
+
+# Вывести только первые 7 элементов словаря
+keys = list(distinctwords.keys())[:7]
+values = list(distinctwords.values())[:7]
+for i in range(len(keys)):
+    print(keys[i], values[i])
+print('...')
+
+#Отсортируем
+count_pairs = sorted(distinctwords.items(), key=lambda x: (-x[1], x[0])) #ascending order (возрастающий порядок)
+```
+```Ruby
+```
+```Ruby
+```
+```Ruby
+```
+```Ruby
+```
+```Ruby
+```
