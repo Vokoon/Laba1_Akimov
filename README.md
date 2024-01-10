@@ -114,9 +114,37 @@ wb.save('base_new.xlsx')
 
 -----
 # Лабораторная Работа №2 . Создание инструмента для автоматической генерации описаний изображений: использование текстовых данных для описания визуального содержимого
-## Для начала  запустим программу, а для этого вам нужно склонировать следующий репозиторий:
 
 ```Ruby
-****
+import random
+import numpy as np
+import torch
+import torchvision as tv
+import collections
+import os
+import re
 
+import matplotlib.pyplot as plt
+from scipy import ndimage
+from scipy import misc
+from nltk.translate.bleu_score import corpus_bleu
+
+from tqdm import tqdm
+from torch.nn.utils.rnn import pack_padded_sequence
+from torchvision import transforms as T
+from PIL import Image
+
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
+
+%matplotlib inline  
+!nvidia-smi
+
+# Данная ячейка загружает изображения
+#!wget http://images.cocodataset.org/zips/val2014.zip
+#!unzip val2014.zip
+
+# Данная ячейка загружает описания к изображениям
+#!wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
+#!unzip annotations_trainval2014.zip
 ```
