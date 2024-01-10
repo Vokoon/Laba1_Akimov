@@ -117,6 +117,6 @@ wb.save('base_new.xlsx')
 ## Для начала  запустим программу, а для этого вам нужно склонировать следующий репозиторий:
 
 ```Ruby
-git clone https://github.com/Koldim2001/Image_captioning.git
+****
 
 ```
