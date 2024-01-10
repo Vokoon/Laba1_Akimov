@@ -135,6 +135,7 @@ streamlit run web.py --server.port 80
 ```Ruby
  http://localhost:80
 ```
+Выберите файл с вашего ПК и ждите компиляции.
 ![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/e89c4caa-35fd-4d4c-883f-4b9dcef1d073)
 ![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/0a92dac4-699e-4b17-8e2b-ecba38904bb5)
 
