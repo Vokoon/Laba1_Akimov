@@ -142,6 +142,7 @@ streamlit run web.py --server.port 80
 ![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/0a92dac4-699e-4b17-8e2b-ecba38904bb5)
 
 Для корректной работы streamlit веб-фреймворка может потребоваться наличие python версии не ниже 3.9.12.
+Иногда сайт может не запустится с первого раза или же код скажет что вам нехватает конкретной библиотеки, потому вам может понадобится загрузить их по новой.
 
 # Источники!:
 https://github.com/Koldim2001/Image_captioning/tree/main?tab=readme-ov-file
