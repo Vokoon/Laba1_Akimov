@@ -136,7 +136,9 @@ streamlit run web.py --server.port 80
  http://localhost:80
 ```
 Выберите файл с вашего ПК и ждите компиляции.
+
 ![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/e89c4caa-35fd-4d4c-883f-4b9dcef1d073)
+
 ![image](https://github.com/Vokoon/Laba1_Akimov/assets/120046709/0a92dac4-699e-4b17-8e2b-ecba38904bb5)
 
 Для корректной работы streamlit веб-фреймворка может потребоваться наличие python версии не ниже 3.9.12.
