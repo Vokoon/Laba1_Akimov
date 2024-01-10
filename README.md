@@ -137,3 +137,6 @@ streamlit run web.py --server.port 80
 ```
 Для корректной работы streamlit веб-фреймворка может потребоваться наличие python версии не ниже 3.9.12.
 
+# Источники!:
+https://github.com/Koldim2001/Image_captioning/tree/main?tab=readme-ov-file
+https://nbviewer.org/github/Koldim2001/Image_captioning/blob/main/image_captioning_no_attention.ipynb
